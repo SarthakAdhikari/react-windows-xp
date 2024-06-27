@@ -4,6 +4,7 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
+import copy from 'rollup-plugin-copy';
 
 export default {
   input: "src/index.ts",
@@ -21,5 +22,10 @@ export default {
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss(),
+    copy({
+      targets: [
+        { src: 'public/index.html', dest: 'build' }
+      ]
+    })
   ],
 };
