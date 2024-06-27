@@ -24,7 +24,7 @@ export default {
     postcss(),
     copy({
       targets: [
-        { src: 'public/index.html', dest: 'build' }
+        { src: 'index.html', dest: 'build' }
       ]
     })
   ],
